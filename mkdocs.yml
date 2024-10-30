@@ -1,0 +1,62 @@
+site_name: A Peek Into Ballance Mapping
+site_description: 'The supplementary manual for Ballance mapping in Blender'
+site_author: 'yyc12345'
+site_url: 'https://yyc12345.github.io/A-Peek-Into-Ballance-Mapping/'
+copyright: 'Text is available under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>.'
+
+nav:
+  - 「    」: 'index.md'
+  - English:
+    - 'Preface': 'en/index.md'
+  - 简体中文:
+    - '序言': 'zh-cn/index.md'
+    - '归组': 'zh-cn/grouping.md'
+    - '路面发黑': 'zh-cn/black.md'
+    - '基本元素': 'zh-cn/basic-element.md'
+    - '钢轨参数': 'zh-cn/rail-parameter.md'
+    - '禁止缩放物理化的物体': 'zh-cn/no-scaled-physicalized-object.md'
+    - '死亡区': 'zh-cn/depth-cube.md'
+    - '贴图文件的保存格式': 'zh-cn/texture-option.md'
+    - '光源': 'zh-cn/light.md'
+    - 'Stopper没有声音': 'zh-cn/stopper-sound.md'
+    - '路面影子问题': 'zh-cn/shadow.md'
+    - '柱子不断问题': 'zh-cn/transparent-column.md'
+    - '无用物体清理': 'zh-cn/unused-object.md'
+    - '机关二三事': 'zh-cn/element-note.md'
+    - '合并顶点注意事项': 'zh-cn/merge-vertices.md'
+
+theme:
+  name: readthedocs
+  locale: en
+  include_homepage_in_sidebar: false
+
+plugins: []
+
+extra:
+  alternate:
+    - name: English
+      link: /A-Peek-Into-Ballance-Mapping/en/home
+      lang: en
+    - name: 简体中文
+      link: /A-Peek-Into-Ballance-Mapping/zh-cn/home
+      lang: zh
+
+markdown_extensions:
+  - admonition
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
