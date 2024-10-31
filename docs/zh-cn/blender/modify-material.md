@@ -1,0 +1,5 @@
+# 编辑材质
+
+如果你需要编辑物体的材质，请不要直接使用Blender的材质系统来调整（例如通过连线的方式来更改材质）。正确的做法是转到材质面板的Virtools Material部分，如同在Virtools中一样，设置其中的参数，然后点击面板中的应用将其自动转化为几乎等效的Blender材质，以达到可视化的效果。
+
+这么做的原因是BBP在导入导出材质的时候，读取和写入的是Virtools Material中的数据，而非Blender材质本身。因为Blender和Virtools年代差距过大，材质系统也大相径庭，这么做是迫不得已，也是在Blender中获得完全掌控Virtools材质的唯一方法。那么你或许会有疑问，什么时候该去使用Blender的材质系统？例如进行连线等操作。答案是：作图过程中完全不使用Blender的材质系统，所有作图的材质操作均需要通过Virtools Material面板来完成。只有当你地图做完了，希望在Blender中渲染预览图或制作动画的时候，才需要在Blender的材质系统中进行操作，为你的地图材质增加仅可以在Blender中呈现的效果，例如法线，Displacement等。

@@ -21,10 +21,13 @@ nav:
       - '合并顶点注意事项': 'zh-cn/blender/merge-vertices.md'
       - '禁止缩放物理化的物体': 'zh-cn/blender/no-scaled-physicalized-object.md'
       - '无用物体清理': 'zh-cn/blender/unused-object.md'
+      - '梨栠式拖动创建': 'zh-cn/blender/liren-drag.md'
+      - '编辑材质': 'zh-cn/blender/modify-material.md'
       - '吸附功能详解': 'zh-cn/blender/snapping.md'
     - '故障排除':
       - 'Blender 资产相关问题': 'zh-cn/trouble-shooting/blender-assets.md'
       - '路面发黑': 'zh-cn/trouble-shooting/black.md'
+      - '翻面': 'zh-cn/trouble-shooting/flip.md'
       - '路面影子问题': 'zh-cn/trouble-shooting/shadow.md'
       - '柱子不断问题': 'zh-cn/trouble-shooting/transparent-column.md'
       - 'Stopper 没有声音': 'zh-cn/trouble-shooting/stopper-sound.md'
