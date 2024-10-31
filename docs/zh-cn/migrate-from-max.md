@@ -21,6 +21,16 @@ BallanceBlenderPlugin 提供了一套对齐工具，位于3D视图的 `Ballance`
 
 除了传统对齐方式，我们强烈推荐使用 Blender 中的吸附功能。具体请查看[吸附功能详解](./blender/snapping.md)。
 
+## 梨栠式拖动创建
+
+在 **梨栠 washing** 的 3ds Max 制图教程中，有一种可以在 3ds Max 中通过拖动预构好的组件来创建物体的功能。例如梨栠提供了一段平直路面，制图人只需要在 3ds Max 中拖动它的一端拉长，其长度就会被拉长，同时UV也会自动拉长。
+
+如果您习惯了上述操作，可以试试 Blender 中的上位替换功能，具体见：[梨栠式拖动创建](./blender/liren-drag.md)。
+
+## 放样
+
+在 max 中创建复杂路面的方法通常是放样。Blender 也有同样的功能：[Blender 放样方法](./blender/sampling.md)。
+
 ## 地图文件的迁移
 
 如果您已经在 max 中制作了一张自制地图，或半成品地图，可以考虑以下两种迁移方式：
