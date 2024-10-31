@@ -10,20 +10,26 @@ nav:
     - 'Preface': 'en/index.md'
   - 简体中文:
     - '序言': 'zh-cn/index.md'
-    - '归组': 'zh-cn/grouping.md'
-    - '路面发黑': 'zh-cn/black.md'
-    - '基本元素': 'zh-cn/basic-element.md'
-    - '钢轨参数': 'zh-cn/rail-parameter.md'
-    - '禁止缩放物理化的物体': 'zh-cn/no-scaled-physicalized-object.md'
-    - '死亡区': 'zh-cn/depth-cube.md'
-    - '贴图文件的保存格式': 'zh-cn/texture-option.md'
-    - '光源': 'zh-cn/light.md'
-    - 'Stopper没有声音': 'zh-cn/stopper-sound.md'
-    - '路面影子问题': 'zh-cn/shadow.md'
-    - '柱子不断问题': 'zh-cn/transparent-column.md'
-    - '无用物体清理': 'zh-cn/unused-object.md'
-    - '机关二三事': 'zh-cn/element-note.md'
-    - '合并顶点注意事项': 'zh-cn/merge-vertices.md'
+    - 'Ballance 制图概要':
+      - '自制地图概述': 'zh-cn/mapping/introduction.md'
+      - '工具安装与配置': 'zh-cn/mapping/installations.md'
+      - '归组': 'zh-cn/mapping/grouping.md'
+      - '死亡区': 'zh-cn/mapping/depth-cube.md'
+      - '钢轨参数': 'zh-cn/mapping/rail-parameter.md'
+      - '贴图文件的保存格式': 'zh-cn/mapping/texture-option.md'
+    - 'Blender 制图手册':
+      - '合并顶点注意事项': 'zh-cn/blender/merge-vertices.md'
+      - '禁止缩放物理化的物体': 'zh-cn/blender/no-scaled-physicalized-object.md'
+      - '无用物体清理': 'zh-cn/blender/unused-object.md'
+      - '吸附功能详解': 'zh-cn/blender/snapping.md'
+    - '故障排除':
+      - 'Blender 资产相关问题': 'zh-cn/trouble-shooting/blender-assets.md'
+      - '路面发黑': 'zh-cn/trouble-shooting/black.md'
+      - '路面影子问题': 'zh-cn/trouble-shooting/shadow.md'
+      - '柱子不断问题': 'zh-cn/trouble-shooting/transparent-column.md'
+      - 'Stopper 没有声音': 'zh-cn/trouble-shooting/stopper-sound.md'
+      - '光源': 'zh-cn/trouble-shooting/light.md'
+    - '从 3ds MAX 迁移': 'zh-cn/migrate-from-max.md'
 
 theme:
   name: readthedocs
@@ -43,6 +49,9 @@ extra:
 
 markdown_extensions:
   - admonition
+  - toc:
+      permalink: '#'
+      slugify: !!python/name:markdown.extensions.toc.slugify_unicode
   - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
@@ -59,4 +68,3 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-
