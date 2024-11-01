@@ -17,6 +17,7 @@ nav:
       - '钢轨参数': 'zh-cn/mapping/rail-parameter.md'
       - '贴图文件的保存格式': 'zh-cn/mapping/texture-option.md'
     - 'Blender 制图手册':
+      - 'Blender 基础操作指南': 'zh-cn/blender/basic-manual.md'
       - '合并顶点注意事项': 'zh-cn/blender/merge-vertices.md'
       - 'Blender 放样方法': 'zh-cn/blender/sampling.md'
       - '吸附功能详解': 'zh-cn/blender/snapping.md'

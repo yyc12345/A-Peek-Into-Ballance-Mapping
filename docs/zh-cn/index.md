@@ -11,8 +11,9 @@
 
 ## 快速开始
 
-- 如果您了解 Blender 建模，请从[自制地图概述](./mapping/introduction.md)开始阅读以了解 Ballance 地图的相关规则。
-- 如果您已经知道如何在 3ds MAX 中制作自制地图，请阅读[从 3ds MAX 迁移](./migrate-from-max.md)快速熟悉 Blender 制图。
+- 如果您是第一次制作 Ballance 地图，我们建议您请从 [自制地图概述](./mapping/introduction.md) 开始阅读以了解 Ballance 地图的结构与规则。
+- 如果您不熟悉 Blender 的操作，可以参考 [Blender 基础操作指南](./blender/basic-manual.md) 以了解基本的制图操作。
+- 如果您已经知道如何在 3ds MAX 中制作自制地图，或已有半成品地图需要迁移至 Blender 工作流，请阅读 [从 3ds MAX 迁移](./migrate-from-max.md) 快速熟悉 Blender 制图。
 
 在初步了解之后，可以参考[工具安装与配置](./mapping/installations.md)进行制图工具及环境的准备。熟练后也推荐浏览 **Blender 制图手册** 目录中的文章，以更详细地了解 Blender 制图操作与注意事项。
 
