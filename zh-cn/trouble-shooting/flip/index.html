@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="yyc12345" /><link rel="canonical" href="https://yyc12345.github.io/A-Peek-Into-Ballance-Mapping/zh-cn/trouble-shooting/flip/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>翻面 - A Peek Into Ballance Mapping</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u7ffb\u9762";
+        var mkdocs_page_input_path = "zh-cn/trouble-shooting/flip.md";
+        var mkdocs_page_url = "/A-Peek-Into-Ballance-Mapping/zh-cn/trouble-shooting/flip/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> A Peek Into Ballance Mapping
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">English</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../en/">Preface</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">简体中文</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../">序言</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Ballance 制图概要</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/introduction/">自制地图概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/installations/">工具安装与配置</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/grouping/">归组</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/rail-parameter/">钢轨参数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/texture-option/">贴图文件的保存格式</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Blender 制图手册</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/basic-manual/">Blender 基础操作指南</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/merge-vertices/">合并顶点注意事项</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/sampling/">Blender 放样方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/snapping/">吸附功能详解</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/liren-drag/">梨栠式拖动创建</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/no-scaled-physicalized-object/">禁止缩放物理化的物体</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/unused-object/">无用物体清理</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/modify-material/">编辑材质</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >故障排除</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../blender-assets/">Blender 资产相关问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../black/">路面发黑</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">翻面</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../shadow/">路面影子问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../transparent-column/">柱子不断问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../stopper-sound/">Stopper 没有声音</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../light/">光源</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../migrate-from-max/">从 3ds MAX 迁移</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">A Peek Into Ballance Mapping</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">简体中文</li>
+          <li class="breadcrumb-item">故障排除</li>
+      <li class="breadcrumb-item active">翻面</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="翻面">翻面<a class="headerlink" href="#翻面" title="Permanent link">#</a></h1>
+<p>Ballance基于性能考量，会对大多数物体进行背面剔除操作。被背面剔除的面不会在游戏里渲染，这也是导致关卡渲染不正确的原因之一。总而言之翻面问题在Ballance制图中尤其需要注意。下图介绍了一个面的正反区别，以及如何在Blender中观察面的正反：</p>
+<p><img alt="flip" src="../../../imgs/flip.png" /></p>
+<p>为了观察面的正反，首先需要在右上角打开视图叠加层（箭头1所示。不需要编辑模式，物体模式下就可以），然后勾选Geometry分类下的Face Orientation选项，即可打开面朝向显示。打开后物体会被蒙上一层蓝色或红色的遮罩，蓝色的遮罩表示法线指向当前视角的纸外，红色表示指向纸内，也就是所谓的法线翻转了。通常情况下只需要观察视野里是否有红色出现，然后对齐使用编辑模式下的菜单<code>Mesh - Normals - Flip</code>将其法线翻转修正即可。</p>
+<p>Ballance并不是会对所有物体都做背面剔除，你可以通过材质强制指定某个面不进行背面剔除，例如原版关卡的灯柱中的黄色灯光就没有做背面剔除。为了不被背面剔除，也就是所谓实现双面显示，需要做的事情就是将需要双面显示的面的材质中的Two Sided勾选上，然后应用即可。需要注意的是，最好将需要双面显示的部分单独用一个独立的材质，因为双面显示需要消耗的绘图性能可能比较多，如果全图都用了双面显示可能会很卡。</p>
+<p>顺带一提，Blender材质的背面剔除，与Virtools Material中的Two Sided选项进行了同步。因此如果你在Blender中无法观察到一个面，那么大概率在游戏里也看不到它，这样可以直观地给制图人提供一个背面剔除下的预览。</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../black/" class="btn btn-neutral float-left" title="路面发黑"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../shadow/" class="btn btn-neutral float-right" title="路面影子问题">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Text is available under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>.</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../black/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../shadow/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

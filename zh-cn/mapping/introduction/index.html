@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="yyc12345" /><link rel="canonical" href="https://yyc12345.github.io/A-Peek-Into-Ballance-Mapping/zh-cn/mapping/introduction/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>自制地图概述 - A Peek Into Ballance Mapping</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u81ea\u5236\u5730\u56fe\u6982\u8ff0";
+        var mkdocs_page_input_path = "zh-cn/mapping/introduction.md";
+        var mkdocs_page_url = "/A-Peek-Into-Ballance-Mapping/zh-cn/mapping/introduction/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> A Peek Into Ballance Mapping
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">English</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../en/">Preface</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">简体中文</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../">序言</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Ballance 制图概要</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">自制地图概述</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#制图工具链">制图工具链</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#关卡内容总览">关卡内容总览</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#关卡基本要素">关卡基本要素</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#何为归组">何为归组</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#机关如何生效">机关如何生效</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#死亡区">死亡区</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#开始制作">开始制作</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../installations/">工具安装与配置</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../grouping/">归组</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../rail-parameter/">钢轨参数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../texture-option/">贴图文件的保存格式</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Blender 制图手册</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/basic-manual/">Blender 基础操作指南</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/merge-vertices/">合并顶点注意事项</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/sampling/">Blender 放样方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/snapping/">吸附功能详解</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/liren-drag/">梨栠式拖动创建</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/no-scaled-physicalized-object/">禁止缩放物理化的物体</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/unused-object/">无用物体清理</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/modify-material/">编辑材质</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >故障排除</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/blender-assets/">Blender 资产相关问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/black/">路面发黑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/flip/">翻面</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/shadow/">路面影子问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/transparent-column/">柱子不断问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/stopper-sound/">Stopper 没有声音</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/light/">光源</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../migrate-from-max/">从 3ds MAX 迁移</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">A Peek Into Ballance Mapping</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">简体中文</li>
+          <li class="breadcrumb-item">Ballance 制图概要</li>
+      <li class="breadcrumb-item active">自制地图概述</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="自制地图概述">自制地图概述<a class="headerlink" href="#自制地图概述" title="Permanent link">#</a></h1>
+<h2 id="制图工具链">制图工具链<a class="headerlink" href="#制图工具链" title="Permanent link">#</a></h2>
+<p>本文档仅推荐唯一的制图工具链/工作流：</p>
+<ul>
+<li><a href="https://www.blender.org/download/">Blender</a></li>
+<li><a href="https://github.com/yyc12345/BallanceBlenderHelper">BallanceBlenderPlugin</a></li>
+</ul>
+<p>这套工作流的优势在于：不涉及自制图内嵌脚本时，可以完全摆脱对 Virtools 的依赖。可以说这套工作流就是目前最舒服的 Ballance 制图流程。</p>
+<p>地图（也叫关卡）在文件系统中通常被保存为一个 nmo 文件。该文件类型原本只能借助专用工具 Virtools 打开及编辑，但 Virtools 过于古老，难以使用，且对模型不提供编辑能力，需要借助 Blender / 3dsMAX 这样的工具建模后导入 Virtools 中，过程中又涉及到各类导入导出插件（max 导出 nmo 的插件仅支持非常古老的 max 版本），非常繁琐且兼容性较差。</p>
+<p>BallanceBlenderPlugin 则很好地解决了上述问题，提供了直接对 nmo 文件的读写能力，使 Blender 能够直接导入、导出 nmo 文件，摆脱了 Virtools 的限制，也摆脱了老旧 3dsMAX 的限制，能够使用更现代化的 Blender 进行制图，大大提高了制图效率。</p>
+<p>具体安装与配置请查看<a href="../installations/">工具安装与配置</a>。</p>
+<h2 id="关卡内容总览">关卡内容总览<a class="headerlink" href="#关卡内容总览" title="Permanent link">#</a></h2>
+<p>一张 Ballance 地图中通常包括以下物体：</p>
+<ul>
+<li>道路与轨道</li>
+<li><a href="#机关如何生效">机关与道具</a></li>
+<li>检查点与重生点</li>
+<li>终点飞船</li>
+<li>其它自定义装饰物</li>
+</ul>
+<p>道路与轨道在 Ballance 中文社区的术语称为路面与钢轨。该部分需要制图者通过建模软件手动构建，特殊情况下还需要手动为物体上材质、调整UV。目前暂不存在所谓“简单拖动、画线就能生成复杂道路、轨道”的方法，但借助 Blender 及 BallanceBlenderPlugin 我们能够达到类似的操作。</p>
+<p>而机关、检查点等，它们中的大多数在 Blender 中都只需要简单摆放至正确位置并正确<a href="#何为归组">归组</a>即可，Ballance 会根据归组信息自动将其替换为真实的游戏内机关。</p>
+<p>自定义装饰物可以是携带任意贴图的任意模型。默认情况下它不会与物理世界发生交互，可以通过归入路面组让其具有路面的物理特性。关于外置贴图的保存可以查看<a href="../texture-option/">贴图文件的保存格式</a>。</p>
+<h2 id="关卡基本要素">关卡基本要素<a class="headerlink" href="#关卡基本要素" title="Permanent link">#</a></h2>
+<p>在 Blender 中，一个基本的 Ballance 关卡至少需要包括：</p>
+<ul>
+<li>一个开头的四火焰盘点（注意是火焰，不是底部路面，路面不是必须的）。</li>
+<li>一个重生点（第一小节的）。</li>
+<li>一个飞船。</li>
+</ul>
+<p>如果不包含以上物体，即使导出了关卡，Ballance 也会拒接加载。</p>
+<p>此外，对于只有一小节的地图，Ballance 在渲染开头的四盘点火焰的时候会出现 Bug，表现为火焰粒子呈现为不自然的三角形。这就是所谓的“一小节关卡 Bug”。为了避免这种情况，请添加第一小节的检查点（两火焰盘点）和第二小节的重生点，让关卡小节数变为2。我们不建议制作只有一小节的关卡，尽管它玩起来没有任何问题。</p>
+<h2 id="何为归组">何为归组<a class="headerlink" href="#何为归组" title="Permanent link">#</a></h2>
+<p>组是 Ballance 关卡中的重要概念。地图中的任何模型，只有归入相应的组中，才会具有相应的功能。</p>
+<p>例如，一个可行走的路面应当归入以下组中：</p>
+<ul>
+<li><code>Phys_Floors</code>：使路面物理化，否则无法与玩家球发生碰撞。</li>
+<li><code>Sound_HitID_01</code>：玩家与该组物体碰撞时会发出水泥地面的碰撞音效。</li>
+<li><code>Sound_RollID_01</code>：玩家球在该组物体滚动时会发出水泥地面的滚动音效。</li>
+<li><code>Shadow</code>：玩家球在该组物体上方一定距离内时会投射出影子。</li>
+</ul>
+<p>具体的归组信息与规则可以在 Ballance Wiki 的<a href="https://ballance.jxpxxzj.cn/wiki/%E5%BD%92%E7%BB%84">归组页面</a>查询到，本文档不予赘述。</p>
+<p>在 Blender 当中，由插件生成的物体、制图资产库中的物体，均已经归好组，除非特殊需求，一般无需做过多调整。具体操作请查看<a href="../grouping/">归组</a>章节。</p>
+<h2 id="机关如何生效">机关如何生效<a class="headerlink" href="#机关如何生效" title="Permanent link">#</a></h2>
+<p>机关与普通物体的归组略有不同。Ballance 地图中所有的机关都没有贴图，这表示它们只是一个占位符，它们将会在游戏运行时根据组别被游戏自动替换成有功能、真正的机关。你完全可以用一个道具球的占位符，然后把它归入风扇组，那么在游戏中，这些道具球模型就会被替换成风扇，而不是道具球。</p>
+<p>这意味着这些占位符的 Mesh 不重要。甚至于你可以直接使用一个空白 Mesh，它也会被游戏正常替换，只要归组正确，但这样对于制图来说不够直观和方便，占位符就是为了方便观察这个机关的作用范围才存在的。</p>
+<p>那么 Ballance 是如何知道机关应该被替换在哪里呢，答案就是这些机关的原点。准确地说是在运行时先存储这些机关占位符的位移，旋转，缩放，然后把这些占位符删除，然后将真正的机关导入进来，再把之前存储的位移，旋转，缩放信息赋予给它。因此，机关的原点很重要。</p>
+<p>基于上述原因，<strong>机关的原点和机关的形状之间的位置关系不能被改变</strong>，也就是机关的原点绝对不可以改变。也就意味着你绝对不可以对机关的占位符使用 Blender 右键菜单中的设置原点中的任意一项。如果擅自移动机关的原点，所导致的后果包括但不限于机关错位等。</p>
+<h2 id="死亡区">死亡区<a class="headerlink" href="#死亡区" title="Permanent link">#</a></h2>
+<p>死亡区是 Ballance 游戏中的一种特殊物体，当玩家球碰到它的时候就会死亡，回到重生点。</p>
+<p>死亡区的判定是按照其 Bounding Box（碰撞盒）来判断的，只要进入其碰撞盒，就判断和死亡区接触。死亡区并不是指物体触碰到死亡区的面才产生效果的，不要有这样的误解。也因此不要把死亡区本身塑造成歪七扭八的，并指望它能工作。相反，应该用多个死亡区来达成相同效果。这也就是我们为什么通常使用 Cube（立方体）来作为死亡区的模型，因为 Cube 的碰撞盒就是其本身形状，简单直观，且死亡区不会在游戏里显示，因此没有贴图也没关系。</p>
+<p>死亡区是可以有缩放的，这与那些需要物理化的物体不同。但旋转死亡区可能带来意料之外的效果（旋转后的死亡区的碰撞盒不再是死亡区形状本身了，不方便观察），不要那么做。</p>
+<p>死亡区需要隐藏，不然会在游戏里显示，很难看。在 Blender 里隐藏就是在 Virtools，以及地图中隐藏了，二者隐藏属性是相通的。</p>
+<h2 id="开始制作">开始制作<a class="headerlink" href="#开始制作" title="Permanent link">#</a></h2>
+<p>了解到上述关于 Ballance 关卡的基本知识后，您就可以开始着手制作自己的自制地图了。</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../" class="btn btn-neutral float-left" title="序言"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../installations/" class="btn btn-neutral float-right" title="工具安装与配置">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Text is available under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>.</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../installations/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

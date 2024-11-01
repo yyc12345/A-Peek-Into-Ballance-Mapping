@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="yyc12345" /><link rel="canonical" href="https://yyc12345.github.io/A-Peek-Into-Ballance-Mapping/zh-cn/trouble-shooting/black/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>路面发黑 - A Peek Into Ballance Mapping</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u8def\u9762\u53d1\u9ed1";
+        var mkdocs_page_input_path = "zh-cn/trouble-shooting/black.md";
+        var mkdocs_page_url = "/A-Peek-Into-Ballance-Mapping/zh-cn/trouble-shooting/black/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> A Peek Into Ballance Mapping
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">English</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../en/">Preface</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">简体中文</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../">序言</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Ballance 制图概要</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/introduction/">自制地图概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/installations/">工具安装与配置</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/grouping/">归组</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/rail-parameter/">钢轨参数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/texture-option/">贴图文件的保存格式</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Blender 制图手册</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/basic-manual/">Blender 基础操作指南</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/merge-vertices/">合并顶点注意事项</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/sampling/">Blender 放样方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/snapping/">吸附功能详解</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/liren-drag/">梨栠式拖动创建</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/no-scaled-physicalized-object/">禁止缩放物理化的物体</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/unused-object/">无用物体清理</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/modify-material/">编辑材质</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >故障排除</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../blender-assets/">Blender 资产相关问题</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">路面发黑</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#法线错误">法线错误</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#钢轨接头">钢轨接头</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#路面法线">路面法线</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#无论如何都无法修复">无论如何都无法修复</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#材质错误">材质错误</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../flip/">翻面</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../shadow/">路面影子问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../transparent-column/">柱子不断问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../stopper-sound/">Stopper 没有声音</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../light/">光源</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../migrate-from-max/">从 3ds MAX 迁移</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">A Peek Into Ballance Mapping</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">简体中文</li>
+          <li class="breadcrumb-item">故障排除</li>
+      <li class="breadcrumb-item active">路面发黑</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="路面发黑">路面发黑<a class="headerlink" href="#路面发黑" title="Permanent link">#</a></h1>
+<p>使用Blender创建Ballance地图时会偶尔发生进入游戏后的路面显示偏黑的情况。虽然这里说的是路面发黑，但不局限于路面，钢轨，木板，甚至是装饰在设置不合理的情况下也会发黑，这里的路面是一个泛指。</p>
+<p>概括地来说，Ballance里路面发黑无外乎由两个原因导致：法线错误，或材质错误。或者更复杂一点，两者皆有。下面分别介绍这两种错误以及如何解决。</p>
+<h2 id="法线错误">法线错误<a class="headerlink" href="#法线错误" title="Permanent link">#</a></h2>
+<h3 id="钢轨接头">钢轨接头<a class="headerlink" href="#钢轨接头" title="Permanent link">#</a></h3>
+<p>钢轨接头处的法线是新手最容易出错的地方，即最容易产生黑色斑点的地方，下图展示了如何打开法线显示和钢轨接头法线的常见错误。</p>
+<p><img alt="rail_cap_normal" src="../../../imgs/rail_cap_normal.png" /></p>
+<p>为了显示法线，我们首先要进入编辑模式，然后打开右上角视图叠加层面板（箭头1），然后找到Normal栏，点击勾选第二个法线显示选项（箭头2），这将打开分立法线显示。然后在右侧调整法线显示长度，直到3D视图中粉红色法线的长度合适为止。</p>
+<p>图中从左到右分别展示了：错误的钢轨接头法线，以及使用两种不同解决方案改出的正确钢轨接头法线。通常来说，我们希望钢轨平滑，因此很自然地会右键钢轨选择自动平滑，但这样操作会导致钢轨接头处的法线被平滑了，这不是我们想要的，为了将最左侧的错误转换到右侧的正确法线，一种解决方案是选择接头的边线，然后选择菜单<code>Edge - Makr Sharp</code>，将它们标记成锐边，这样钢轨的侧边和顶端的法线就会分离开，成为我们希望的样子。这就是中间的钢轨接头的样子。另一种方法是将钢轨截面单独选中，选择菜单<code>Face - Shade Flat</code>，单独将界面改为平直着色，也可以达成同样的效果。</p>
+<p>最后还有另外一个简单粗暴的方案，就是物体模式下右键钢轨选择自动平滑着色，并将角度设置为50。但需要注意的是，设置完成后请转到修改器栏将自动平滑着色修改器应用，因为从Blender 4.1开始，平滑着色作为修改器而存在，然而BBP在保存物体的时候会忽略修改器，所以请务必在保存地图前应用所有修改器。</p>
+<h3 id="路面法线">路面法线<a class="headerlink" href="#路面法线" title="Permanent link">#</a></h3>
+<p>下图展示了一张由于路面法线错乱导致路面发黑的问题。</p>
+<p><img alt="black_floor" src="../../../imgs/black_floor.png" /></p>
+<p>左侧是这块路面在Blender中开启了法线显示后的截图，右侧则是这个路面在游戏中呈现的样子。显然可以注意到，路面拐角处的法线出现了错误，尤其是侧边的法线，指向了错误的方向。通过灵活使用锐边和平直平滑着色，可以修复这些法线错误，以让其在游戏内渲染正确。</p>
+<h3 id="无论如何都无法修复">无论如何都无法修复<a class="headerlink" href="#无论如何都无法修复" title="Permanent link">#</a></h3>
+<p>通常来说，法线可以通过重新计算，或者平直平滑着色来进行修复，但是如果你遇到了无论怎么操作，法线就是不听使唤的情况（这种情况通常发生在编辑导入的，或者自动生成的物体的时候）。这多半是由于物体的自定义法线数据没有被删除导致的。解决方案是先选中所有面，然后点击菜单<code>Mesh - Normals - Reset Vectors</code>清除所有自定义法线数据，这样以来法线应该就会听从你的指示了。</p>
+<h2 id="材质错误">材质错误<a class="headerlink" href="#材质错误" title="Permanent link">#</a></h2>
+<p>材质错误也是造成路面发黑的原因之一，许多早期地图就是因为材质设置错误，从而导致路面发黑，甚至被迫通过加灯泡的方法来解决路面过暗的问题。最常见的错误就是将路面顶部的贴图应用于路面侧边，从而显示发黑，如下图所示：</p>
+<p><img alt="black_side" src="../../../imgs/black_side.png" /></p>
+<p>你会发现侧边材质无论在哪里显示都很正常，而顶面材质转到侧边时就会变得一片漆黑。这种错误实际上是由Ballance光照系统导致的，Ballance游戏中的主光源是一个带有倾斜角度的太阳光，因此被太阳光照射不到的一面就会完全是黑色，需要将材质中的Emissive选项设置成偏白色来弥补这种丑陋。这正是路面侧边材质所做的。如果直接将路面顶部这种没有白色Emissive弥补的材质直接应用于侧面，理所当然地会发黑。</p>
+<p>解决方案有两种，一是打开官方的关卡，看看其他人在相似结构中设置的材质数值是多少，这是一个普适的解决方案。另一个解决方案则是利用BBP插件中内置的BMERevenge路面创建功能。BMERevenge路面创建功能为了能够创建高度大于5的路面，配置了两个特殊的材质：<code>BMELightingFloorTopBorder</code>和<code>BMELightingFloorTopBirderless</code>。如果你曾经在地图文件中插入了高度大于5的路面，这两个材质则会自动被生成。你可以直接利用这两个材质来进行创建，它们尽管看起来是路面顶部材质，但在侧边可以正常显示，不会发黑。</p>
+<p>顺带一提，如果你仔细观察Level 2开头的倾斜木板，你会发现向左倾斜的和向右倾斜的木板的上表面的材质是不同的，两者有细微的差别，这正是对阳光的一种弥补，通过这种弥补，强行让它们在游戏里看起来没有差别。</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../blender-assets/" class="btn btn-neutral float-left" title="Blender 资产相关问题"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../flip/" class="btn btn-neutral float-right" title="翻面">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Text is available under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>.</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../blender-assets/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../flip/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

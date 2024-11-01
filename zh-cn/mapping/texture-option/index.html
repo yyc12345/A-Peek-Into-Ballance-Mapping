@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="yyc12345" /><link rel="canonical" href="https://yyc12345.github.io/A-Peek-Into-Ballance-Mapping/zh-cn/mapping/texture-option/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>贴图文件的保存格式 - A Peek Into Ballance Mapping</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u8d34\u56fe\u6587\u4ef6\u7684\u4fdd\u5b58\u683c\u5f0f";
+        var mkdocs_page_input_path = "zh-cn/mapping/texture-option.md";
+        var mkdocs_page_url = "/A-Peek-Into-Ballance-Mapping/zh-cn/mapping/texture-option/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> A Peek Into Ballance Mapping
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">English</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../en/">Preface</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">简体中文</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../">序言</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Ballance 制图概要</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../introduction/">自制地图概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../installations/">工具安装与配置</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../grouping/">归组</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../rail-parameter/">钢轨参数</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">贴图文件的保存格式</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#save-options">Save Options</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#video-format">Video Format</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Blender 制图手册</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/basic-manual/">Blender 基础操作指南</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/merge-vertices/">合并顶点注意事项</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/sampling/">Blender 放样方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/snapping/">吸附功能详解</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/liren-drag/">梨栠式拖动创建</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/no-scaled-physicalized-object/">禁止缩放物理化的物体</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/unused-object/">无用物体清理</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../blender/modify-material/">编辑材质</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >故障排除</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/blender-assets/">Blender 资产相关问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/black/">路面发黑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/flip/">翻面</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/shadow/">路面影子问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/transparent-column/">柱子不断问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/stopper-sound/">Stopper 没有声音</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/light/">光源</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../migrate-from-max/">从 3ds MAX 迁移</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">A Peek Into Ballance Mapping</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">简体中文</li>
+          <li class="breadcrumb-item">Ballance 制图概要</li>
+      <li class="breadcrumb-item active">贴图文件的保存格式</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="贴图文件的保存格式">贴图文件的保存格式<a class="headerlink" href="#贴图文件的保存格式" title="Permanent link">#</a></h1>
+<h2 id="save-options">Save Options<a class="headerlink" href="#save-options" title="Permanent link">#</a></h2>
+<p>贴图的 Save Options 控制了贴图如何被保存在 Ballance 地图中。为了尽可能减少地图文件大小，且保证地图不会出现找不到贴图从而渲染错误的情况，请遵循以下要求设置贴图的 Save Options：</p>
+<ul>
+<li>对于所有 Ballance 原版贴图（例如路面贴图，钢轨贴图，木板贴图等，凡是能在 Texture 文件夹中找到的都是），使用 <code>External</code> 保存格式。</li>
+<li>对于所有其它的贴图（例如你自己添加的贴图，就比如要素超载里面的那个滑稽柱子顶面就是），使用 <code>Raw Data</code> 保存格式。</li>
+<li><strong>非常不建议</strong> 使用 <code>Use Global</code>，因为根据用户全局选项的不同，这个保存方式会造成歧义。除非是在修复一些老旧地图，或者你知道你在做什么的情况下，否则不要使用它。</li>
+</ul>
+<h2 id="video-format">Video Format<a class="headerlink" href="#video-format" title="Permanent link">#</a></h2>
+<p>Video Format 决定了你的贴图在游戏运行时是怎么传递给GPU的（大概那么理解就好）。为了防止贴图出错，尤其是透明度出错，且最小化显示压力，请遵循如下要求来设置贴图的 Video Format：</p>
+<ul>
+<li>对于非透明贴图（例如路面贴图等），请使用 <code>16Bits ARGB1555</code>。</li>
+<li>对于有透明度的贴图（例如柱子下半部分的透明，风扇的网罩），请使用 <code>32Bits ARGB8888</code>。</li>
+<li><strong>非常不建议</strong> 使用其它任何 Video Format（因为我也没用过）。</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../rail-parameter/" class="btn btn-neutral float-left" title="钢轨参数"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../blender/basic-manual/" class="btn btn-neutral float-right" title="Blender 基础操作指南">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Text is available under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>.</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../rail-parameter/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../blender/basic-manual/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

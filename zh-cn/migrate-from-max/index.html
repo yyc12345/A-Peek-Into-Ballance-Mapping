@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="yyc12345" /><link rel="canonical" href="https://yyc12345.github.io/A-Peek-Into-Ballance-Mapping/zh-cn/migrate-from-max/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>从 3ds MAX 迁移 - A Peek Into Ballance Mapping</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u4ece 3ds MAX \u8fc1\u79fb";
+        var mkdocs_page_input_path = "zh-cn/migrate-from-max.md";
+        var mkdocs_page_url = "/A-Peek-Into-Ballance-Mapping/zh-cn/migrate-from-max/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> A Peek Into Ballance Mapping
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">English</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../en/">Preface</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">简体中文</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">序言</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Ballance 制图概要</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mapping/introduction/">自制地图概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mapping/installations/">工具安装与配置</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mapping/grouping/">归组</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mapping/rail-parameter/">钢轨参数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mapping/texture-option/">贴图文件的保存格式</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Blender 制图手册</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../blender/basic-manual/">Blender 基础操作指南</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../blender/merge-vertices/">合并顶点注意事项</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../blender/sampling/">Blender 放样方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../blender/snapping/">吸附功能详解</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../blender/liren-drag/">梨栠式拖动创建</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../blender/no-scaled-physicalized-object/">禁止缩放物理化的物体</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../blender/unused-object/">无用物体清理</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../blender/modify-material/">编辑材质</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >故障排除</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../trouble-shooting/blender-assets/">Blender 资产相关问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../trouble-shooting/black/">路面发黑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../trouble-shooting/flip/">翻面</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../trouble-shooting/shadow/">路面影子问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../trouble-shooting/transparent-column/">柱子不断问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../trouble-shooting/stopper-sound/">Stopper 没有声音</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../trouble-shooting/light/">光源</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">从 3ds MAX 迁移</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#差异比较">差异比较</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#max-对齐工具">Max 对齐工具</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#孤立编辑">孤立编辑</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#梨栠式拖动创建">梨栠式拖动创建</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#放样">放样</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#地图文件的迁移">地图文件的迁移</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">A Peek Into Ballance Mapping</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">简体中文</li>
+      <li class="breadcrumb-item active">从 3ds MAX 迁移</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="从-3ds-max-迁移">从 3ds MAX 迁移<a class="headerlink" href="#从-3ds-max-迁移" title="Permanent link">#</a></h1>
+<p>本文主要给熟练使用 3ds MAX（以下简称 max） 制图的制图者阅读，为了方便他们快速了解 max 与 blender 制图过程中的不同，并快速熟悉 blender 中的操作。</p>
+<h2 id="差异比较">差异比较<a class="headerlink" href="#差异比较" title="Permanent link">#</a></h2>
+<p>虽然大体是相同的，都需要制图者创建地图模型，但 Blender 与 max 在部分操作和特性上略有不同，详见下表：</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>Max</th>
+<th>Blender</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>归组</td>
+<td>利用命名规则和 Virtools 脚本归组</td>
+<td>直接在 Blender 中归组</td>
+</tr>
+<tr>
+<td>构建赛道</td>
+<td>预置在文件内的预置件</td>
+<td>直接填写参数创建或使用资产库</td>
+</tr>
+<tr>
+<td>自动UV</td>
+<td>通过叠修改器支持</td>
+<td>原生支持、插件支持</td>
+</tr>
+<tr>
+<td>软件版本</td>
+<td>受限于导出插件，仅支持古早版本</td>
+<td>目前已支持至最新版（4.2 LTS）</td>
+</tr>
+</tbody>
+</table>
+<p>表中的差异项会在下文逐一阐述。</p>
+<h2 id="max-对齐工具">Max 对齐工具<a class="headerlink" href="#max-对齐工具" title="Permanent link">#</a></h2>
+<p>BallanceBlenderPlugin 提供了一套对齐工具，位于3D视图的 <code>Ballance</code> - <code>3ds Max Align</code>。该工具与 max 中的对齐工具相似。具体用法见BBP的<a href="https://yyc12345.github.io/BallanceBlenderHelper/zh-cn/legacy-align/">传统对齐文档</a>。</p>
+<p>除了传统对齐方式，我们强烈推荐使用 Blender 中的吸附功能。具体请查看<a href="../blender/snapping/">吸附功能详解</a>。</p>
+<h2 id="孤立编辑">孤立编辑<a class="headerlink" href="#孤立编辑" title="Permanent link">#</a></h2>
+<p>在 max 中，想要专注于调整某一个或几个网格时，通常会使用 <code>Alt + Q</code> 将其孤立，只显示这一个物体。</p>
+<p>Blender 中的对应快捷键为 <code>/</code>。进入孤立模式后，再次按下 <code>/</code> 键即可退出。</p>
+<h2 id="梨栠式拖动创建">梨栠式拖动创建<a class="headerlink" href="#梨栠式拖动创建" title="Permanent link">#</a></h2>
+<p>在 <strong>梨栠 washing</strong> 的 3ds Max 制图教程中，有一种可以在 3ds Max 中通过拖动预构好的组件来创建物体的功能。例如梨栠提供了一段平直路面，制图人只需要在 3ds Max 中拖动它的一端拉长，其长度就会被拉长，同时UV也会自动拉长。</p>
+<p>如果您习惯了上述操作，可以试试 Blender 中的上位替换功能，具体见：<a href="../blender/liren-drag/">梨栠式拖动创建</a>。</p>
+<h2 id="放样">放样<a class="headerlink" href="#放样" title="Permanent link">#</a></h2>
+<p>在 max 中创建复杂路面的方法通常是放样。Blender 也有同样的功能：<a href="../blender/sampling/">Blender 放样方法</a>。</p>
+<h2 id="地图文件的迁移">地图文件的迁移<a class="headerlink" href="#地图文件的迁移" title="Permanent link">#</a></h2>
+<p>如果您已经在 max 中制作了一张自制地图，或半成品地图，可以考虑以下两种迁移方式：</p>
+<ul>
+<li>先借助插件将关卡导出至 nmo，并借助 max 制图模板中的归组模板赋予其归组信息，然后直接将 nmo 文件导入至 blender。此方法无需重新归组，后续也可直接导出 nmo。</li>
+<li>直接将模型导出至现代化的3D模型格式，例如 fbx、glTF 等，然后导入 blender。此操作将丢失您的归组信息，目前需要您在 blender 中手动或利用自动归组功能重新归组。</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../trouble-shooting/light/" class="btn btn-neutral float-left" title="光源"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Text is available under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>.</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../trouble-shooting/light/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

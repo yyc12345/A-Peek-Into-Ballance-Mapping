@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="yyc12345" /><link rel="canonical" href="https://yyc12345.github.io/A-Peek-Into-Ballance-Mapping/zh-cn/blender/modify-material/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>编辑材质 - A Peek Into Ballance Mapping</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u7f16\u8f91\u6750\u8d28";
+        var mkdocs_page_input_path = "zh-cn/blender/modify-material.md";
+        var mkdocs_page_url = "/A-Peek-Into-Ballance-Mapping/zh-cn/blender/modify-material/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> A Peek Into Ballance Mapping
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">English</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../en/">Preface</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">简体中文</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../">序言</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Ballance 制图概要</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/introduction/">自制地图概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/installations/">工具安装与配置</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/grouping/">归组</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/rail-parameter/">钢轨参数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/texture-option/">贴图文件的保存格式</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Blender 制图手册</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../basic-manual/">Blender 基础操作指南</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../merge-vertices/">合并顶点注意事项</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../sampling/">Blender 放样方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../snapping/">吸附功能详解</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../liren-drag/">梨栠式拖动创建</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../no-scaled-physicalized-object/">禁止缩放物理化的物体</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../unused-object/">无用物体清理</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">编辑材质</a>
+    <ul class="current">
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >故障排除</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/blender-assets/">Blender 资产相关问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/black/">路面发黑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/flip/">翻面</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/shadow/">路面影子问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/transparent-column/">柱子不断问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/stopper-sound/">Stopper 没有声音</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/light/">光源</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../migrate-from-max/">从 3ds MAX 迁移</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">A Peek Into Ballance Mapping</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">简体中文</li>
+          <li class="breadcrumb-item">Blender 制图手册</li>
+      <li class="breadcrumb-item active">编辑材质</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="编辑材质">编辑材质<a class="headerlink" href="#编辑材质" title="Permanent link">#</a></h1>
+<p>如果你需要编辑物体的材质，请不要直接使用Blender的材质系统来调整（例如通过连线的方式来更改材质）。正确的做法是转到材质面板的Virtools Material部分，如同在Virtools中一样，设置其中的参数，然后点击面板中的应用将其自动转化为几乎等效的Blender材质，以达到可视化的效果。</p>
+<p>这么做的原因是BBP在导入导出材质的时候，读取和写入的是Virtools Material中的数据，而非Blender材质本身。因为Blender和Virtools年代差距过大，材质系统也大相径庭，这么做是迫不得已，也是在Blender中获得完全掌控Virtools材质的唯一方法。那么你或许会有疑问，什么时候该去使用Blender的材质系统？例如进行连线等操作。答案是：作图过程中完全不使用Blender的材质系统，所有作图的材质操作均需要通过Virtools Material面板来完成。只有当你地图做完了，希望在Blender中渲染预览图或制作动画的时候，才需要在Blender的材质系统中进行操作，为你的地图材质增加仅可以在Blender中呈现的效果，例如法线，Displacement等。</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../unused-object/" class="btn btn-neutral float-left" title="无用物体清理"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../trouble-shooting/blender-assets/" class="btn btn-neutral float-right" title="Blender 资产相关问题">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Text is available under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>.</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../unused-object/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../trouble-shooting/blender-assets/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

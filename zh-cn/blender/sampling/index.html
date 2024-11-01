@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="yyc12345" /><link rel="canonical" href="https://yyc12345.github.io/A-Peek-Into-Ballance-Mapping/zh-cn/blender/sampling/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Blender 放样方法 - A Peek Into Ballance Mapping</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Blender \u653e\u6837\u65b9\u6cd5";
+        var mkdocs_page_input_path = "zh-cn/blender/sampling.md";
+        var mkdocs_page_url = "/A-Peek-Into-Ballance-Mapping/zh-cn/blender/sampling/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> A Peek Into Ballance Mapping
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">English</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../en/">Preface</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">简体中文</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../">序言</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Ballance 制图概要</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/introduction/">自制地图概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/installations/">工具安装与配置</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/grouping/">归组</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/rail-parameter/">钢轨参数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mapping/texture-option/">贴图文件的保存格式</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Blender 制图手册</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../basic-manual/">Blender 基础操作指南</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../merge-vertices/">合并顶点注意事项</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Blender 放样方法</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#曲线放样">曲线放样</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#基于修改器">基于修改器</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../snapping/">吸附功能详解</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../liren-drag/">梨栠式拖动创建</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../no-scaled-physicalized-object/">禁止缩放物理化的物体</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../unused-object/">无用物体清理</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../modify-material/">编辑材质</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >故障排除</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/blender-assets/">Blender 资产相关问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/black/">路面发黑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/flip/">翻面</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/shadow/">路面影子问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/transparent-column/">柱子不断问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/stopper-sound/">Stopper 没有声音</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../trouble-shooting/light/">光源</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../migrate-from-max/">从 3ds MAX 迁移</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">A Peek Into Ballance Mapping</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">简体中文</li>
+          <li class="breadcrumb-item">Blender 制图手册</li>
+      <li class="breadcrumb-item active">Blender 放样方法</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="blender-放样方法">Blender 放样方法<a class="headerlink" href="#blender-放样方法" title="Permanent link">#</a></h1>
+<p>在 3ds MAX 中 <strong>创建复杂的路面、轨道</strong> 一般使用放样的方式。Blender 中也有相似的操作，主要有以下两种：</p>
+<ul>
+<li>曲线放样</li>
+<li>阵列修改器 + 曲线修改器</li>
+</ul>
+<p>第一种方法与 max 中的放样操作更为相似，但有时也需视情况灵活使用两种方法。</p>
+<h2 id="曲线放样">曲线放样<a class="headerlink" href="#曲线放样" title="Permanent link">#</a></h2>
+<p>创建任意一段曲线后，再创建钢轨的截面。钢轨截面可以直接在 <code>添加 - Rails - Rail Section</code> 创建。也可根据<a href="../../mapping/rail-parameter/">钢轨参数</a>手动创建。如果是使用插件直接创建的截面，首先需要将其绕X轴旋转90度（即让截面位于XY平面），然后应用其旋转（<code>Ctrl + A</code> 然后选择旋转），再将其转化为曲线。随后在曲线的 <code>数据 - 几何数据 - 倒角</code> 中，选择 <code>物体</code>，然后将物体设置为钢轨的截面即可。</p>
+<p>在 <code>数据 - 形状 - 预览分辨率U</code> 处可以设置每两个点之间的分段数。若制作的弧形轨道棱角分明时，可以提高此处的数值以创建更多分段。</p>
+<p>切记：</p>
+<ul>
+<li>曲线不能随意缩放，否则放样结果可能不准确。</li>
+<li>用此方法创建的轨道、路面目前需要手动归组。</li>
+</ul>
+<h2 id="基于修改器">基于修改器<a class="headerlink" href="#基于修改器" title="Permanent link">#</a></h2>
+<p>此方法需要一条较短的钢轨作为基础物体，可以直接使用插件添加一段钢轨（不是钢轨截面）。并创建一段曲线作为备用。</p>
+<p>首先在钢轨的修改器面板，添加一个阵列修改器（<code>生成 - 阵列</code>）。其中的 <strong>相对偏移</strong> 处需要手动设置，设置方法为需要往哪个轴延伸，就将哪个轴填为 1（反方向则填 -1）。随后将 <strong>数量</strong> 改为一个较大的值。这些参数随后还可以动态调整更改，所以不必在意具体数值。</p>
+<p>随后继续添加一个曲线修改器（<code>形变 - 曲线</code>）。将 <strong>曲线物体</strong> 设置为提前创建的曲线，将 <strong>形变轴</strong> 改为和刚刚相对偏移相同的轴（即刚刚填 1 或 -1 的轴）。此时应该就能看到物体阵列会沿曲线分布。</p>
+<p>此时可以根据生成物体的效果进行进一步操作：</p>
+<ul>
+<li>若分布的长度不够，可以增加阵列修改器的数量参数。</li>
+<li>若棱角过于明显，可以按 <code>Tab</code> 编辑顶点将原钢轨缩短。</li>
+<li>若满意最终效果，也可将所有修改器应用，将网格固定。（建议在做完相关设计后再应用，以防需要更改参数）</li>
+</ul>
+<p>此方法构建的物体无需重新归组，但在曲线存在拐角较大处效果较差，建议用于构建拐弯相对平滑的物体。</p>
+<p><img alt="array_sampling" src="../../../imgs/array_sampling.png" /></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../merge-vertices/" class="btn btn-neutral float-left" title="合并顶点注意事项"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../snapping/" class="btn btn-neutral float-right" title="吸附功能详解">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Text is available under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>.</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../merge-vertices/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../snapping/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
