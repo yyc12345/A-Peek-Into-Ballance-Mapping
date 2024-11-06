@@ -25,6 +25,9 @@ nav:
       - '禁止缩放物理化的物体': 'zh-cn/blender/no-scaled-physicalized-object.md'
       - '无用物体清理': 'zh-cn/blender/unused-object.md'
       - '编辑材质': 'zh-cn/blender/modify-material.md'
+    - '进阶操作指南':
+      - '放样制作钢轨': 'zh-cn/advance/sampling-rail.md'
+      - '放样制作路面': 'zh-cn/advance/sampling-floor.md'
     - '故障排除':
       - 'Blender 资产相关问题': 'zh-cn/trouble-shooting/blender-assets.md'
       - '路面发黑': 'zh-cn/trouble-shooting/black.md'
