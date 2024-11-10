@@ -1,0 +1,1745 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The supplementary manual for Ballance mapping in Blender">
+      
+      
+        <meta name="author" content="yyc12345">
+      
+      
+        <link rel="canonical" href="https://yyc12345.github.io/A-Peek-Into-Ballance-Mapping/zh-cn/tutorial/sector-1/">
+      
+      
+        <link rel="prev" href="../smallest-level/">
+      
+      
+        <link rel="next" href="../sector-2/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>第一小节：拼接路面 - A Peek Into Ballance Mapping</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#第一小节拼接路面" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="A Peek Into Ballance Mapping" class="md-header__button md-logo" aria-label="A Peek Into Ballance Mapping" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            A Peek Into Ballance Mapping
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第一小节：拼接路面
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/A-Peek-Into-Ballance-Mapping/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/A-Peek-Into-Ballance-Mapping/zh-cn/" hreflang="zh" class="md-select__link">
+              简体中文
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="A Peek Into Ballance Mapping" class="md-nav__button md-logo" aria-label="A Peek Into Ballance Mapping" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    A Peek Into Ballance Mapping
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    「    」
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../en/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    English
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            English
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    简体中文
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            简体中文
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    渐进式制图教程
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            渐进式制图教程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../your-first-map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    你的第一张自制地图
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smallest-level/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    最小的关卡
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    第一小节：拼接路面
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    第一小节：拼接路面
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#有哪些基本方块" class="md-nav__link">
+    <span class="md-ellipsis">
+      有哪些基本方块
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#添加平直路" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加平直路
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#路面拼接" class="md-nav__link">
+    <span class="md-ellipsis">
+      路面拼接
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#更多可吸附点" class="md-nav__link">
+    <span class="md-ellipsis">
+      更多可吸附点
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#路面伸缩" class="md-nav__link">
+    <span class="md-ellipsis">
+      路面伸缩
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#制作坡面" class="md-nav__link">
+    <span class="md-ellipsis">
+      制作坡面
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#补面" class="md-nav__link">
+    <span class="md-ellipsis">
+      补面
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#接下来" class="md-nav__link">
+    <span class="md-ellipsis">
+      接下来
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sector-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第二小节：构建钢轨
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sector-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第三小节：放置机关
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decorations-and-depth-test-cube/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    装饰与死亡区
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clean-and-release/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    清理与发布
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ballance 制图概要
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ballance 制图概要
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mapping/introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    自制地图概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mapping/installations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    工具安装与配置
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mapping/grouping/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    归组
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mapping/rail-parameter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    钢轨参数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mapping/texture-option/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    贴图文件的保存格式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blender 制图手册
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Blender 制图手册
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blender/basic-manual/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blender 基础操作指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blender/merge-vertices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    合并顶点注意事项
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blender/sampling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blender 放样方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blender/snapping/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    吸附功能详解
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blender/liren-drag/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    梨栠式拖动创建
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blender/no-scaled-physicalized-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    禁止缩放物理化的物体
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blender/unused-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    无用物体清理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blender/modify-material/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    编辑材质
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    进阶操作指南
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            进阶操作指南
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advance/sampling-rail/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    放样制作钢轨
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advance/sampling-floor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    放样制作路面
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    故障排除
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            故障排除
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trouble-shooting/blender-assets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blender 资产相关问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trouble-shooting/black/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    路面发黑
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trouble-shooting/flip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    翻面
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trouble-shooting/shadow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    路面影子问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trouble-shooting/transparent-column/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    柱子不断问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trouble-shooting/stopper-sound/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stopper 没有声音
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trouble-shooting/light/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    光源
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../migrate-from-max/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    从 3ds MAX 迁移
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#有哪些基本方块" class="md-nav__link">
+    <span class="md-ellipsis">
+      有哪些基本方块
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#添加平直路" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加平直路
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#路面拼接" class="md-nav__link">
+    <span class="md-ellipsis">
+      路面拼接
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#更多可吸附点" class="md-nav__link">
+    <span class="md-ellipsis">
+      更多可吸附点
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#路面伸缩" class="md-nav__link">
+    <span class="md-ellipsis">
+      路面伸缩
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#制作坡面" class="md-nav__link">
+    <span class="md-ellipsis">
+      制作坡面
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#补面" class="md-nav__link">
+    <span class="md-ellipsis">
+      补面
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#接下来" class="md-nav__link">
+    <span class="md-ellipsis">
+      接下来
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="第一小节拼接路面">第一小节：拼接路面<a class="headerlink" href="#第一小节拼接路面" title="Permanent link">#</a></h1>
+<p>本节我们将演示如何制作 Ballance 中的原版风格路面。</p>
+<p>在制图时，最基本、最常用的路面制作方式是拼接。类似于拼拼图，我们用直线路、拐角、路口，这些基本的方块拼接出复杂的道路。</p>
+<h2 id="有哪些基本方块">有哪些基本方块<a class="headerlink" href="#有哪些基本方块" title="Permanent link">#</a></h2>
+<p>首先我们需要分清 Ballance 原版风格中一般存在哪几种道路：</p>
+<ul>
+<li>平地路面：最为常见的，宽度为 5 的路面。</li>
+<li>宽路面：更宽，两侧带有凸起保护的路面。例如 1-1 开头便是。</li>
+<li>凹路面：中间有下凹的路面。</li>
+<li>细边花纹路面：一般用于边缘带凸起保护的大平台。</li>
+</ul>
+<p>每种路面都会有几种基本结构：</p>
+<ul>
+<li>直线</li>
+<li>拐角</li>
+<li>T 字路口</li>
+<li>交叉路口</li>
+<li>直线末端</li>
+</ul>
+<p>此外还有一种特殊的，用于平地路和凹路之间的：平凹转换路面。</p>
+<p>初步了解了各种路面类型后，我们来实操制作一段路面。</p>
+<h2 id="添加平直路">添加平直路<a class="headerlink" href="#添加平直路" title="Permanent link">#</a></h2>
+<p>BBP 已经为我们提供了上述所有路面的基本结构，我们尝试生成一段平直路。<strong>首先将3D游标移动到比较空旷的位置</strong>。</p>
+<div class="admonition note">
+<p class="admonition-title">提示</p>
+<p>按住 <code>Shift</code> 的同时点击 <strong>鼠标右键</strong> 即可快速更改3D游标的位置。</p>
+<p>默认情况下，你的3D游标位于世界的原点。由于物体默认会添加在3D游标的位置，所以直接生成路面的话，会被上一小节放置在原点的盘点路面遮挡住，这样不方便观察与选取。一定记得善用3D游标！</p>
+</div>
+<p>按下 <code>Shift + A</code>，生成一段平直路（Normal Floor）。在进行其它操作（包括“移动”）前，首先观察左下方的对话框。对话框中可以选择高度与长度，默认情况下保持高度为 5 即可；长度可以自由设定，后续也有办法修改。</p>
+<p>此外注意到下方有一个“面”参数，该参数控制的是路面的各个面是否生成。例如对于平直路来说，默认只生成顶面和左右两个侧面，其它的面都是空的。这是为了节省地图大小以及游戏内渲染开销，<strong>制图时习惯删除玩家不可能看到的面</strong>。平直路的前后一般会与其它路面相连，所以没必要创建面。当然在某些情况下，前后面也会外露，这时可以在生成时就利用“面”参数将其补上，保证视觉效果上的正常。</p>
+<p>这里我们创建一段长度为 20 的路面（不补前后面）备用。</p>
+<p><img alt="tutorial_floor_1" src="../../../imgs/tutorial_floor_1.png" /></p>
+<h2 id="路面拼接">路面拼接<a class="headerlink" href="#路面拼接" title="Permanent link">#</a></h2>
+<p>路面拼接是构建路面中最主要的操作。首先我们在一个实际应用场景中尝试一下。</p>
+<p>目前长直路的两端是空的，我们尝试给其中的一端添加一个末端结构。首先添加一个平直路末端（Normal Floor Terminal），保持其默认生成选项。</p>
+<p>然后选择该末端结构，按下 <code>G</code> <code>B</code>，选择开口处的一个顶点，将其吸附到平直路开口的对应顶点上，如下图所示：</p>
+<p><img alt="tutorial_floor_2" src="../../../imgs/tutorial_floor_2.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">提示</p>
+<p>为了方便演示，上图开启了线框叠加显示，<strong>并不是</strong> 进入了编辑模式。切记 <strong>物体的对齐</strong> 永远需要在 <strong>非编辑模式下</strong> 进行。后续配图如非是 <strong>明确指出</strong> 需要进入编辑模式，一般都是在物体模式下进行操作。</p>
+</div>
+<p>然后你应该能发现，这两个结构已经完美地贴合在一起了。取消选中之后应该是看不出任何物体接缝的。当然路面材质上 <strong>可能</strong> 会存在细微的接缝，对于这种情况，由于游戏内一般很难看清，所以我们不做处理即可。</p>
+<p>由于此时两个结构只是相邻贴在一起了，你可能希望他们真正地合并为同一个物体，这也很容易，只需要将他们全部选中，然后按下 <code>Ctrl + J</code> 即可合并。但要注意的是，此时我们合并路面只是为了更方便，能够一次性移动多个路面结构，实际上这些路面结构虽然合并为了一个网格，但他们仍然 <strong>各自独立</strong>。这一点可以先保留不用考虑，等到该教程做整体收尾工作时会一并展示如何真正合并网格。</p>
+<h2 id="更多可吸附点">更多可吸附点<a class="headerlink" href="#更多可吸附点" title="Permanent link">#</a></h2>
+<p>此时我们的路面是独立与盘点放置的，现在我们需要把路面和盘点对齐。如果你以前使用过 3ds Max 中的对齐，你可能会相当“中心对齐中心”保证两者轴线方向对齐，然后再使用“最大对齐最小”保证路面终端与盘点贴合。实际上我们继续利用强大的吸附功能即可。</p>
+<p>先将刚刚的路面经过旋转和移动，使其大致方向、位置与盘点相对应。然后选中路面，按下 <code>G</code> <code>B</code>，选择路面末端 <strong>上边的中点</strong>，然后吸附至盘点 <strong>外侧上边的中点</strong>。如下图所示：</p>
+<p><img alt="tutorial_floor_3" src="../../../imgs/tutorial_floor_3.png" /></p>
+<p>正确吸附到盘点上边的中点时应该会像下图这样显示（即中点位置出现一个 <strong>三角形标志</strong>）：</p>
+<p><img alt="tutorial_floor_4" src="../../../imgs/tutorial_floor_4.png" /></p>
+<p>如果你成功对齐了上述操作，那么你已经学会了如何制作路面了。可以跟随自己的想法再多做几条路面进行练习。</p>
+<h2 id="路面伸缩">路面伸缩<a class="headerlink" href="#路面伸缩" title="Permanent link">#</a></h2>
+<p>假如你已经生成了一段 <strong>平直路</strong>，但出于某种原因你觉得长度不够（或太长），希望再次调整路面的长度。而这时已经没有 BBP 的对话框能够给你调整长度了，并且你可能会想到缩放操作，但却发现路面的材质也会被拉伸，视觉效果很糟糕。这时其实并不需要再额外创建一段路面，而是可以直接通过移动顶点的方式拉长网格本身。</p>
+<p>首先我们按 <code>Tab</code> 进入编辑模式。要注意的是，默认情况下，拉伸网格同样会拉伸路面的材质，我们需要开启 <strong>矫正面属性</strong> 的功能。开启后，Blender 会自动帮我们矫正 UV，这样材质就会自动延展而不是被暴力拉伸了。开启位置在工具面板的 <code>选项 - 变换 - 矫正面属性</code>。如下图所示：</p>
+<p><img alt="tutorial_floor_5" src="../../../imgs/tutorial_floor_5.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">提示</p>
+<p>找不到 <strong>矫正面属性</strong> 开关？要先进入 <strong>编辑模式</strong> 才会有这个开关哦。</p>
+</div>
+<p>然后开始操作顶点。<strong>按下 <code>Alt + Z</code> 开启透视模式</strong>，选中 <strong>缺口这一端</strong> 的所有顶点，然后按下 <code>G</code>，再限制一个轴（下图中的红线是限制的 X 轴），沿轴向拖动顶点即可。</p>
+<p><img alt="tutorial_floor_6" src="../../../imgs/tutorial_floor_6.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">提示</p>
+<p>务必开启透视模式再选择顶点。因为 BME 创建的结构，可能会有多个顶点位于同一个位置。不开启透视模式会导致选择不全，无法完整地拖动端面。</p>
+</div>
+<h2 id="制作坡面">制作坡面<a class="headerlink" href="#制作坡面" title="Permanent link">#</a></h2>
+<p>在 Ballance 中的赛道并不总是位于同一水平高度，坡面是非常常见的。下面将演示如何制作坡面。</p>
+<p>对于一个普通的 <strong>直路</strong>，制作坡面是非常简单的。因为其只由两端的顶点决定中间的线条，所以根据上述描述的伸缩路面的方法，选中其中一端的顶点，然后将移动限制在 Z 轴即可。</p>
+<p>但有些时候，中间的直线并不完全由两端的点确定（即中间可能有其它的分段，例如我们前不久结合到一起的带端面的路面），此时我们需要用到更高级的方法来构成坡面，最常用的方式为 FFD（晶格形变）。</p>
+<div class="admonition note">
+<p class="admonition-title">提示</p>
+<p>晶格形变是建模中常用的一种形变手段，可以将一个复杂的网格映射到一个简单的立方体网格，编辑晶格的网格会将各顶点的位移传递给目标网格。这里我们对一个路面使用晶格形变，是为了制作坡面时均匀地传递坡度变化，使路面在形变之后仍能保持直线。</p>
+</div>
+<p>由于 Blender 自带的晶格不太方便 Ballance 制图使用 <del>（事实上就是相当便秘）</del>，这里我们推荐使用一个叫做 Simple Lattice 的插件（见<a href="../../mapping/installations/">工具安装与配置</a>）。安装启用插件后，右键路面，选择菜单里的 <code>Simple Lattice Create</code>，此时插件会做几件事：</p>
+<ul>
+<li>根据选中物体的边界框创建一个晶格</li>
+<li>将选中物体绑定到这个晶格</li>
+<li>进入晶格的编辑模式</li>
+</ul>
+<p>一般情况下我们制作坡面时不需要设置额外的晶格细分，插值类型保持线性即可。更丰富的 FFD 参数可以自行探索。此时选中其中一端的点（此时应该是处于晶格的编辑模式，而不是物体的编辑模式），然后向上移动，即可看到坡面效果了。</p>
+<p><img alt="tutorial_floor_7" src="../../../imgs/tutorial_floor_7.png" /></p>
+<p>一般情况下，我们可以保留这个晶格，以便后续继续调整。如果你对坡度满意了，可以将现在的状态固定下来，操作方法如下：首先记得退出编辑模式，然后选中物体，找到它的修改器面板，应该会看到一个 <code>SimpleLattice</code> 的修改器，选中该修改器后按下 <code>Ctrl + A</code> 应用修改器。应用完毕后，网格就会固定成当前的状态。此时 Simple Lattice 创建的晶格也可以被安全地删除了。</p>
+<h2 id="补面">补面<a class="headerlink" href="#补面" title="Permanent link">#</a></h2>
+<p>我们注意到路面还有一面是有缺口的，如果拼接其它路块如路口、平凹转换等，或者直接拼接一个道路末端结构，这个面会被挡住，我们就没必要将其补上。但也有很多时候我们需要直接补上这个面，而不是拼接一个新的末端。</p>
+<p>假设我们想在这个位置后面衔接一个小拱桥，按照原版的地图风格，这个面应该被补为一个侧面的材质。首先我们从资产库中拖一个小拱桥出来，使用吸附功能将路面和拱桥拼接在一起。</p>
+<p><img alt="tutorial_floor_8" src="../../../imgs/tutorial_floor_8.png" /></p>
+<p>可以发现，连接处由于路面没有被遮挡，缺失的面露出，会非常难看。此时我们使用孤立模式单独编辑路面。选中路面后按下 <code>/</code>，可以暂时隐藏其它物体（稍后再按 <code>/</code> 就可以回到正常模式），只观察路面。进入编辑模式，我们按 <code>2</code> 切换到 <strong>边模式</strong>，然后选中缺口的两条 <strong>侧边</strong>，如下图所示（图中的红线就是要选中的两条边）：</p>
+<p><img alt="tutorial_floor_9" src="../../../imgs/tutorial_floor_9.png" /></p>
+<p>然后按下 <code>F</code> 创建一个面。这时你应该能看见一个很糊的侧面被补出来了。此时我们保持对这个面的选择（或者切换到 <strong>面模式</strong> 重新选中这个面），然后打开 <strong>Ballance 菜单</strong> 中的 <strong>展平 UV</strong> 功能。注意到左下角的对话框，我们需要选择路面专用的展平选项（第一排的第二个），然后调整参考边（对于一个四边形的面，只需尝试 0、1、2、3 即可），直到我们侧面的花纹变得合理。这样就补好了一个面。</p>
+<p><img alt="tutorial_floor_10" src="../../../imgs/tutorial_floor_10.png" /></p>
+<p>你也可以用同样的方法，给我们刚刚拖放出来的小拱桥补面。</p>
+<h2 id="接下来">接下来<a class="headerlink" href="#接下来" title="Permanent link">#</a></h2>
+<p>可以自行创建一些路面，构建迷宫桥梁等结构。熟练路面操作后，可以进入到下一小节：<a href="../sector-2/">第二小节：构建钢轨</a>。</p>
+<p>此外，除了上述拼接的方式，我们也有更高级的方式创建路面，例如<a href="../../advance/sampling-floor/">放样制作路面</a>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../smallest-level/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 最小的关卡">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                最小的关卡
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../sector-2/" class="md-footer__link md-footer__link--next" aria-label="Next: 第二小节：构建钢轨">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                第二小节：构建钢轨
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Text is available under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "navigation.indexes", "navigation.instant.progress", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
