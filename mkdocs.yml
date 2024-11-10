@@ -10,6 +10,14 @@ nav:
     - 'Preface': 'en/index.md'
   - 简体中文:
     - '序言': 'zh-cn/index.md'
+    - '渐进式制图教程':
+      - '你的第一张自制地图': 'zh-cn/tutorial/your-first-map.md'
+      - '最小的关卡': 'zh-cn/tutorial/smallest-level.md'
+      - '第一小节：拼接路面': 'zh-cn/tutorial/sector-1.md'
+      - '第二小节：构建钢轨': 'zh-cn/tutorial/sector-2.md'
+      - '第三小节：放置机关': 'zh-cn/tutorial/sector-3.md'
+      - '装饰与死亡区': 'zh-cn/tutorial/decorations-and-depth-test-cube.md'
+      - '清理与发布': 'zh-cn/tutorial/clean-and-release.md'
     - 'Ballance 制图概要':
       - '自制地图概述': 'zh-cn/mapping/introduction.md'
       - '工具安装与配置': 'zh-cn/mapping/installations.md'
@@ -39,19 +47,42 @@ nav:
     - '从 3ds MAX 迁移': 'zh-cn/migrate-from-max.md'
 
 theme:
-  name: readthedocs
-  locale: en
-  include_homepage_in_sidebar: false
+  # name: readthedocs
+  # include_homepage_in_sidebar: false
+  name: material
+  language: en
+  features:
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant.progress
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
 
-plugins: []
+plugins:
+  - search
 
 extra:
   alternate:
     - name: English
-      link: /A-Peek-Into-Ballance-Mapping/en/home
+      link: /A-Peek-Into-Ballance-Mapping/en/
       lang: en
     - name: 简体中文
-      link: /A-Peek-Into-Ballance-Mapping/zh-cn/home
+      link: /A-Peek-Into-Ballance-Mapping/zh-cn/
       lang: zh
 
 markdown_extensions:

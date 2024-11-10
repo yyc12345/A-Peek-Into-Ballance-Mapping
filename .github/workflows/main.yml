@@ -16,8 +16,8 @@ jobs:
   
       - name: Install MkDocs
         run: |
-          echo 'mkdocs' > requirements.txt
-          echo 'pymdown-extensions' >> requirements.txt
+          echo 'mkdocs-material' > requirements.txt
+        # echo 'pymdown-extensions' >> requirements.txt
 
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@nomaterial
